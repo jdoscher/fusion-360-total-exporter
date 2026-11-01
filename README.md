@@ -24,3 +24,14 @@ Also, if you can share the file that it failed on, that may help me, but it depe
 
 ## I don't like your style of writing
 That wasn't a question. But yeah... me too some days.
+
+## Patched fork: resume and hang fixes
+
+Upstream hangs inside `Documents.open` after many opens ([#45](https://github.com/Jnesselr/fusion-360-total-exporter/issues/45)), and its resume re-opens every design, so a restart hangs at the same spot. This fork:
+
+- skips finished designs before opening them (`.export_done`, or an existing .f3d + .stp);
+- marks a design `.export_inprogress` while opening; a design that hung is retried once, then skipped and listed in `skipped_hung.txt`;
+- reads an optional `exportignore.txt` in the export folder (one design name or path fragment per line to skip);
+- adds `MAX_OPENS_PER_RUN` (0 = unlimited; set e.g. 75 if Fusion still freezes, then relaunch Fusion and re-run) and `MAX_ATTEMPTS` (default 2) at the top of the .py.
+
+Output in the export folder: `output.log` (appended each run), `skipped_hung.txt` (export these by hand), `failed.txt` (delete `.export_failed` in a design's folder to retry).
