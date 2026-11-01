@@ -1,8 +1,10 @@
+This is a fork from [Jnessel' github](https://github.com/Jnesselr/fusion-360-total-exporter) with some fixes to make this work in 2026.
+
 # Fusion 360 Total Exporter
 Need to export all of your fusion data in a bunch of formats? We've got you covered. This will export your designs across all hubs, projects, files, and components. It exports them in STL, STEP, and IGES format. It also exports the sketches as DXF files. In addition to those, an f3d/f3z file will be exported for each component/assembly file in all of your projects, across all hubs. It doesn't ask what you want written out, it just writes out the latest version of everything, to the folder of your choice.
 
 ## How do I use this?
-1. Download this project from [here](https://github.com/Jnesselr/fusion-360-total-exporter/archive/master.zip), and unzip it (Or clone this repo, if you are familiar with git)
+1. Download this project from here, and unzip it (Or clone this repo, if you are familiar with git)
 2. Open Fusion 360
 3. Click on "Tools" then "Scripts/Add-ins"
 4. Click the + button and select the unzipped folder
@@ -15,7 +17,7 @@ Need to export all of your fusion data in a bunch of formats? We've got you cove
 Autodesk just announced that they were limiting features in their free tier to a level that made people a wee bit upset. I pay for Fusion 360, but I get that it's too much of an expense for some people. I had experience with exporting STL files for BotQueue (shhh spoilers) and figured that if I wrote a plugin, no one would have to do manual exports. Yay! Automation reigns supreme!
 
 ## What happens if I don't like what this plugin does?
-No warrenty is implied, etc. etc. Go blame Autodesk for changing the free tier. If you want to blame me for anything, blame me and my sense of ethics for feeling like I need to write this program in the first place.
+No warranty is implied, etc. etc.
 
 ## What if I find a bug?
 If an exception occurs, the script will let you know after it has exported everything that it can export. There will be a log file called output.log in your export folder. Submit an issue with that file attached. Please and thank you!
